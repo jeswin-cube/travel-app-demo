@@ -1,0 +1,8 @@
+.NavbarButton {
+    padding: 9px 24px;
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+    background-color: #008080;
+    border-radius: 8px;
+}
