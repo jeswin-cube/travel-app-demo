@@ -3,3 +3,10 @@ export type Highlight = {
   description: string;
   image: string;
 };
+
+export type Category = {
+  name: string;
+  activities: {
+    title: string;
+  }[];
+};
