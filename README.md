@@ -21,3 +21,26 @@ The page will reload if you make edits.\
   use [this extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
   and toggle it on
 * Requests are made via react query that handles caching and re-fetching of data. 
+
+## Directory Structure
+
+```
+├── public
+    ├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── src
+    ├── application
+        ├── app.tsx
+    ├── common
+        ├── api (declarations and implementation of api clients)
+        ├── assets
+        ├── components (common components)
+    ├── features
+        ├── <feature-name>
+            ├── components (components used by the feature)
+            ├── views (main screens in the feature)
+            ├── assets
+    └── index.tsx
+```
