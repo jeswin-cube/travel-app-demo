@@ -37,7 +37,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category, cardVisibl
         <div className={"absolute right-0 bg-white rounded-[8px] z-[9999] p-[12px] shadow-highlightCard"}>
           <p className={"text-black100 font-semibold mb-[8px]"}>Activities to try out</p>
           {category.activities.map((activity) => {
-            return <p className={"text-black100 mb-[4px]"}>{activity.title}</p>;
+            return <p className={"text-black100 mb-[4px]"}>{`-> ${activity.title}`}</p>;
           })}
         </div>
       ) : null}

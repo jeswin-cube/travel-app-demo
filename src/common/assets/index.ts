@@ -1,3 +1,4 @@
 import HeroImage from "./HeroImage.png";
+import HeroImageMobile from "./HeroImageMobile.png";
 
-export { HeroImage };
+export { HeroImage, HeroImageMobile };

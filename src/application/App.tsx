@@ -7,7 +7,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App font-plex">
+    <div className="App font-plex overflow-x-hidden">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>

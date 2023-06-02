@@ -1,18 +1,40 @@
-import React from "react";
-import { HeroImage } from "../../../common/assets";
+import React, { useEffect, useState } from "react";
 import "../styles/landing.css";
 import { Highlights } from "../components";
 import { Categories } from "../components/categories";
+import { HeaderImage } from "../components/header-image";
+import { HeroImage, HeroImageMobile } from "../../../common/assets";
 
 export const Landing = () => {
+  const [heroImage, setHeroImage] = useState(HeroImage);
+
+  const handleWindowResize = () => {
+    if (window.innerWidth > 640) {
+      setHeroImage(HeroImage);
+    } else {
+      setHeroImage(HeroImageMobile);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
   return (
     <div>
-      <div className={"w-[100%] relative flex items-center justify-center"}>
-        <img src={HeroImage} alt={"Hero Image"} />
-        <h1 className={"absolute HeaderGradient top-0 font-bold text-[140px] text-center mt-[176px]"}>
-          Welcome <br /> to Hawaii
-        </h1>
-      </div>
+      <HeaderImage
+        titleVisible={true}
+        image={heroImage}
+        title={
+          <>
+            Welcome <br /> to Hawaii{" "}
+          </>
+        }
+      />
       <Highlights />
       <Categories />
     </div>

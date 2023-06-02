@@ -1,5 +1,13 @@
 import { useQuery } from "../../common";
-import { getCategories, GetCategoriesResponse, getHighlights, GetHighlightsResponse } from "./api";
+import {
+  getCategories,
+  GetCategoriesResponse,
+  GetHighlightDetailsResponse,
+  getHighlightDetails,
+  getHighlights,
+  GetHighlightsResponse,
+} from "./api";
+import { HighlightsType } from "./types";
 
 export const useGetHighlights = () => {
   return useQuery<GetHighlightsResponse>({
@@ -14,5 +22,15 @@ export const useGetCategories = () => {
     queryKey: "categories",
     queryFn: async () => await getCategories().then(),
     options: {},
+  });
+};
+
+export const useGetHighlightDetails = (highlightType: HighlightsType) => {
+  return useQuery<GetHighlightDetailsResponse>({
+    queryKey: "highlightDetails",
+    queryFn: async () => await getHighlightDetails(highlightType).then(),
+    options: {
+      enabled: !!highlightType,
+    },
   });
 };
