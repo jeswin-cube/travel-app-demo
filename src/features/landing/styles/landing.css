@@ -1,0 +1,28 @@
+.HeaderGradient {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 6.44%, #FFFFFF 95.08%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+@media (max-width: 640px) {
+    .HighlightCarousel::-webkit-scrollbar {
+        display: none;
+    }
+    .HighlightCarousel {
+        display: flex;
+        -webkit-box-align: stretch;
+        align-items: stretch;
+        overflow: auto;
+        gap: 12px;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .HighLightCard {
+        min-width: 100%;
+        min-height: 420px;
+        max-height: 600px;
+        scroll-snap-align: center;
+    }
+}
