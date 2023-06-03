@@ -27,7 +27,7 @@ export const useGetCategories = () => {
 
 export const useGetHighlightDetails = (highlightType: HighlightsType) => {
   return useQuery<GetHighlightDetailsResponse>({
-    queryKey: "highlightDetails",
+    queryKey: ["highlightDetails", highlightType],
     queryFn: async () => await getHighlightDetails(highlightType).then(),
     options: {
       enabled: !!highlightType,
